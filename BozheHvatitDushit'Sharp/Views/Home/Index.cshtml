@@ -1,0 +1,45 @@
+﻿@{Layout = null;
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Index
+    </title>
+</head>
+<body>
+    <h3>
+        "Товары интернет магазина"
+    </h3>
+    <br />
+
+    <table>
+        <thead>
+            <tr>
+                <td>Название</td>
+                <td>Производитель</td>
+                <td>Цена</td>
+                <td>Описание</td>
+                <td>Категория товара</td>
+            </tr>
+        </thead>
+        <tbody>
+            @{ 
+                foreach (var item in ViewBag.Items)
+                {
+                    <tr>
+                        <td>@item.name</td>
+                        <td>@item.producer</td>
+                        <td>@item.price</td>
+                        <td>@item.description</td>
+                        <td>@item.category</td>
+                        <td><a href="#">Купить</a></td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</body>
+</html>
