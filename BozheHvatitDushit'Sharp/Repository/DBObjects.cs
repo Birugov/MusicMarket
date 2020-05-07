@@ -20,9 +20,9 @@ namespace BozheHvatitDushit_Sharp.Repository
             
             if (!content.Items.Any())
             {
-                content.Items.Add(new Item { name = "FENDER CD-60 DREAD V3 DS BLK WN", price=19400, producer="FENDER", description="", image="", category=content.Categories.First(x=>x.categoryName=="Струнные")});
-                content.Items.Add(new Item { name = "Ударные", price = 19400, producer = "FENDER", description = "", image = "", category = content.Categories.First(x => x.categoryName == "Струнные")});
-                content.Items.Add(new Item { name = "Ударные", price = 19400, producer = "FENDER", description = "", image = "", category = content.Categories.First(x => x.categoryName == "Струнные") });
+                content.Items.Add(new Item { name = "FENDER CD-60 DREAD V3 DS BLK WN", price=19400, producer="FENDER", description="", image="/img/guitar2.jpg", category=content.Categories.First(x=>x.categoryName=="Струнные")});
+                content.Items.Add(new Item { name = "Ударные", price = 19400, producer = "FENDER", description = "", image = "/img/guitar.jpg", category = content.Categories.First(x => x.categoryName == "Струнные".ToString())});
+                content.Items.Add(new Item { name = "Ударные", price = 19400, producer = "FENDER", description = "", image = "/img/guitar.jpg", category = content.Categories.First(x => x.categoryName == "Струнные") });
                 content.SaveChanges();
             }
             content.SaveChanges();
