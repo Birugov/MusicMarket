@@ -1,0 +1,10 @@
+﻿@model BozheHvatitDushit_Sharp.Models.Item
+
+    <div class="col-lg-4" style="font-size:1.0rem; font-family:'Times New Roman', Times, serif">
+        <img class="img-thumbnail" src="@Model.image" />
+        <h5>@Model.name</h5>
+        <p>@Model.producer</p>
+        <p>@Model.description</p>
+        <p>Цена:@Model.price</p>
+        <p><a class="btn btn-warning" asp-controller="Cart" asp-action="addToCart" asp-route-id="@Model.id">Add to cart</a></p>
+    </div>

@@ -1,4 +1,5 @@
 ﻿using BozheHvatitDushit_Sharp.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,11 @@ namespace BozheHvatitDushit_Sharp.Repository
 {
     public class DBObjects
     {
+        private readonly PurchaseContext itemContext;
+        public DBObjects(PurchaseContext itemContext)
+        {
+            this.itemContext = itemContext;
+        }
         public static void Initial(PurchaseContext content)
         {
             if (!content.Categories.Any())
@@ -26,7 +32,9 @@ namespace BozheHvatitDushit_Sharp.Repository
                 content.SaveChanges();
             }
             content.SaveChanges();
+
         }
+        public IEnumerable<Item> Items => itemContext.Items.Include(c => c.category);
         
     }
 }

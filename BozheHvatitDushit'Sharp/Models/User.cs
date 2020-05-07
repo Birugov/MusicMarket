@@ -12,7 +12,7 @@ namespace BozheHvatitDushit_Sharp.Models
         public string userPassword { get; set; }
         public string userMail { get; set; }
         public string Address { get; set; }
-        public Purchase purchase { get; set; }
+        //public Purchase purchase { get; set; }        
 
     }
 }

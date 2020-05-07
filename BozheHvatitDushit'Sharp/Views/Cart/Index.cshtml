@@ -1,0 +1,12 @@
+﻿@model BozheHvatitDushitSharp.ViewModels.CartViewModel
+<div class="container">
+    @foreach (var elem in Model.shopCart.cartItems)
+    {
+        <div class="alert alert-warning mt-3">
+            <p>@elem.item.name</p>
+            <p>@elem.item.price.ToString("c")</p>
+        </div>
+    }
+    <hr />
+    <div class="btn btn-danger" asp-controller="Order">Оплатить</div>
+</div>

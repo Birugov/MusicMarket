@@ -13,7 +13,7 @@
     <header class="blog-header py-3" style="border-bottom:1px solid #e5e5e5;">
         <div class="row flex-nowrap justify-content-between align-items-center">
             <div class="col-4 pt-1">
-                <a class="text-muted" href="#">Basket</a>
+                <a class="text-muted" href="/Cart/">Cart</a>
             </div>
             <div class="col-4 text-center">
                 <a class="blog-header-logo text-dark" style=" font-size: 2.25rem;
@@ -39,16 +39,9 @@
     </div>
     <div class="row mt-5 mb-2">
         @{
-            foreach (var item in ViewBag.Items)
+            foreach (Item item in ViewBag.Items)
             {
-                <div class="col-lg-4" style="font-size:1.0rem; font-family:'Times New Roman', Times, serif">
-                    <img class="img-thumbnail" src="@item.image" />
-                    <h5>@item.name</h5>
-                    <p>@item.producer</p>
-                    <p>@item.description</p>
-                    <p>Цена:@item.price</p>
-                    <p><a class="btn btn-warning" href="#">Добавить в корзину</a></p>
-                </div>
+                @Html.Partial("allItems", item)
             }
         }
     </div>
