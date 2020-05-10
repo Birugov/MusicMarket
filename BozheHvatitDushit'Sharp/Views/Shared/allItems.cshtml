@@ -1,10 +1,61 @@
 ﻿@model BozheHvatitDushit_Sharp.Models.Item
 
-    <div class="col-lg-4" style="font-size:1.0rem; font-family:'Times New Roman', Times, serif">
-        <img class="img-thumbnail" src="@Model.image" />
-        <h5>@Model.name</h5>
-        <p>@Model.producer</p>
-        <p>@Model.description</p>
-        <p>Цена:@Model.price</p>
-        <p><a class="btn btn-warning" asp-controller="Cart" asp-action="addToCart" asp-route-id="@Model.id">Add to cart</a></p>
+    <div class="itemContainer" style="font-size:1.0rem; font-family:'Times New Roman', Times, serif">
+        <img class="itemImage" src="@Model.image" />
+        <h3 style="text-align: center; padding-top: 30px; max-width: 100%">@Model.name</h3>
+        <h5 style="padding-left: 40px">@Model.producer</h5>
+        <h5 style="padding-left: 40px">@Model.description</h5>
+        <h5 style="padding-left: 40px">Цена: @Model.price</h5>
+        <p>
+            <a class="addToCartButton" asp-controller="Cart" asp-action="addToCart" asp-route-id="@Model.id">Add to cart</a>
+        </p>
     </div>
+
+<style>
+    .itemImage {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: none;
+        max-height: 400px;
+        padding-top: 10px;
+    }
+
+    .itemContainer {
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid rgba(0,0,0,.125);
+        border-radius: .25rem;
+        box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+        margin-bottom: 1.5rem !important;
+        margin-left: 15px;
+        margin-right: 15px;
+        flex: 1 0 0%;
+    }
+
+    .addToCartButton {
+        position: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 30%;
+        padding: .5rem 1rem;
+        font-size: 1.25rem;
+        line-height: 1.5;
+        border-radius: .3rem;
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid transparent;
+        user-select: none;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+</style>
