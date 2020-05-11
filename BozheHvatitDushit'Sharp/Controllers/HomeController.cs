@@ -11,7 +11,7 @@ namespace BozheHvatitDushit_Sharp.Controllers
 {
     public class HomeController : Controller
     {
-         public readonly PurchaseContext itemContext;
+        public readonly PurchaseContext itemContext;
 
         private readonly ILogger<HomeController> _logger;
 
@@ -20,6 +20,7 @@ namespace BozheHvatitDushit_Sharp.Controllers
             itemContext = _itemContext;
             _logger = logger;
         }
+
         public IActionResult Index()
         {
             IEnumerable<Item> items = itemContext.Items.ToList();
@@ -29,6 +30,13 @@ namespace BozheHvatitDushit_Sharp.Controllers
 
         public IActionResult Privacy()
         {
+            return View();
+        }
+
+        public IActionResult SwitchToCategory(String categoryName)
+        {
+            IEnumerable<Item> items = itemContext.Items.Where(x => x.category.categoryName == categoryName).ToList();
+            ViewBag.Items = items;
             return View();
         }
 

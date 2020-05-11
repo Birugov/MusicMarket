@@ -31,18 +31,25 @@
     <br />
     <div class="nav-scroller py-0 mb-2">
         <nav class="nav d-flex justify-content-between">
-            <a class="p-2 text-muted" href="#">Drums</a>
-            <a class="p-2 text-muted" href="#">Strings</a>
-            <a class="p-2 text-muted" href="#">Wind</a>
-            <a class="p-2 text-muted" href="#">Glockenspiel</a>
-            <a class="p-2 text-muted" href="#">Keyboards</a>
+            <a class="p-2 text-muted" asp-controller="Home" asp-action="SwitchToCategory" asp-route-categoryName="Drums">Drums</a>
+            <a class="p-2 text-muted" asp-controller="Home" asp-action="SwitchToCategory" asp-route-categoryName="Strings">Strings</a>
+            <a class="p-2 text-muted" asp-controller="Home" asp-action="SwitchToCategory" asp-route-categoryName="Wind">Wind</a>
+            <a class="p-2 text-muted" asp-controller="Home" asp-action="SwitchToCategory" asp-route-categoryName="Glockenspiel">Glockenspiel</a>
+            <a class="p-2 text-muted" asp-controller="Home" asp-action="SwitchToCategory" asp-route-categoryName="Keyboards">Keyboards</a>
         </nav>
     </div>
     <div class="row mt-5 mb-2">
         @{
-            foreach (Item item in ViewBag.Items)
+            if (ViewBag.Lenght == 0)
             {
-                @Html.Partial("allItems", item)
+                <a>Whoooops</a>
+            }
+            else
+            {
+                foreach (Item item in ViewBag.Items)
+                {
+                    @Html.Partial("allItems", item)
+                }
             }
         }
     </div>
