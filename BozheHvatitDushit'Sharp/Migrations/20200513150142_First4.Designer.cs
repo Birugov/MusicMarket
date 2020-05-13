@@ -3,15 +3,17 @@ using System;
 using BozheHvatitDushit_Sharp.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace BozheHvatitDushitSharp.Migrations
 {
     [DbContext(typeof(PurchaseContext))]
-    partial class PurchaseContextModelSnapshot : ModelSnapshot
+    [Migration("20200513150142_First4")]
+    partial class First4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
