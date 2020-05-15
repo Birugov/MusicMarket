@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using BozheHvatitDushit_Sharp.Models;
+using BozheHvatitDushit_Sharp.Repository;
+using BozheHvatitDushitSharp.ViewModels;
 
 namespace BozheHvatitDushit_Sharp.Controllers
 {
     public class HomeController : Controller
     {
-         public readonly PurchaseContext itemContext;
+        public readonly PurchaseContext itemContext;
 
         private readonly ILogger<HomeController> _logger;
 
@@ -19,6 +21,7 @@ namespace BozheHvatitDushit_Sharp.Controllers
         {
             itemContext = _itemContext;
             _logger = logger;
+
         }
         public IActionResult Index()
         {
@@ -37,5 +40,8 @@ namespace BozheHvatitDushit_Sharp.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-    }
+
+    } 
 }
+
+

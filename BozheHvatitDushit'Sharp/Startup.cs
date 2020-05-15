@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -31,13 +32,16 @@ namespace BozheHvatitDushit_Sharp
         public void ConfigureServices(IServiceCollection services)
         {
             string connection = Configuration.GetConnectionString("DefaultConnection");
+
             services.AddDbContext<PurchaseContext>(options =>
             options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<PurchaseContext>();
             services.AddMvc();
             services.AddControllersWithViews();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sp => Cart.GetCart(sp));
             services.AddScoped<DBObjects>();
+            services.AddScoped<Category>();
             services.AddMemoryCache();
             services.AddSession();
         }
@@ -59,16 +63,21 @@ namespace BozheHvatitDushit_Sharp
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseAuthentication();
             app.UseRouting();
             app.UseSession();
             app.UseAuthorization();
+            
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(
+                    name: "categoryFilter",
+                    pattern: "{controller=Category}/{action=List}/{category?}"
+                    );
             });
             using (var scope = app.ApplicationServices.CreateScope())
             {
