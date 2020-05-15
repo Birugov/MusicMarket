@@ -10,6 +10,7 @@ namespace BozheHvatitDushit_Sharp.Models
 {
     public class PurchaseContext:IdentityDbContext
     {
+        
         public DbSet<Category> Categories { get; set; }
         public DbSet<Item> Items { get; set; }
         //public DbSet<Purchase> Purchases { get; set; }

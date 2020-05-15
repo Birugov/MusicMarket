@@ -41,6 +41,7 @@ namespace BozheHvatitDushit_Sharp
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sp => Cart.GetCart(sp));
             services.AddScoped<DBObjects>();
+            services.AddScoped<Category>();
             services.AddMemoryCache();
             services.AddSession();
         }
@@ -66,12 +67,17 @@ namespace BozheHvatitDushit_Sharp
             app.UseRouting();
             app.UseSession();
             app.UseAuthorization();
+            
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(
+                    name: "categoryFilter",
+                    pattern: "{controller=Category}/{action=List}/{category?}"
+                    );
             });
             using (var scope = app.ApplicationServices.CreateScope())
             {
