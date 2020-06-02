@@ -23,6 +23,7 @@ namespace BozheHvatitDushit_Sharp.Controllers
             _logger = logger;
 
         }
+        [ResponseCache(CacheProfileName ="Monthly")]
         public IActionResult Index()
         {
             IEnumerable<Item> items = itemContext.Items.ToList();

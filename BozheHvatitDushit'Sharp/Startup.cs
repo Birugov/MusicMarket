@@ -1,20 +1,18 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web.Mvc;
 using BozheHvatitDushit_Sharp.Models;
 using BozheHvatitDushit_Sharp.Repository;
+using BozheHvatitDushitSharp.Middleware;
 using BozheHvatitDushitSharp.Models;
+using BozheHvatitDushitSharp.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 
 namespace BozheHvatitDushit_Sharp
 {
@@ -34,14 +32,17 @@ namespace BozheHvatitDushit_Sharp
             string connection = Configuration.GetConnectionString("DefaultConnection");
 
             services.AddDbContext<PurchaseContext>(options =>
-            options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+            options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));        
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<PurchaseContext>();
-            services.AddMvc();
+            services.AddMvc(options=> {
+                options.CacheProfiles.Add("Monthly", new CacheProfile { Duration = 60 * 60 * 24 * 7 * 4 });
+            });
             services.AddControllersWithViews();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sp => Cart.GetCart(sp));
             services.AddScoped<DBObjects>();
             services.AddScoped<Category>();
+            services.AddTransient<LogService>();
             services.AddMemoryCache();
             services.AddSession();
         }
@@ -67,8 +68,7 @@ namespace BozheHvatitDushit_Sharp
             app.UseRouting();
             app.UseSession();
             app.UseAuthorization();
-            
-
+            app.UseMiddleware<RRLMiddleware>();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

@@ -45,9 +45,9 @@
                     else
                     {
                 <div>
-                    <p asp-action="register" asp-controller="account" class="btn btn-sm btn-outline-secondary">Sign Up</p>
+                    <a asp-action="register" asp-controller="account" class="btn btn-sm btn-outline-secondary">Sign Up</a>
 
-                     <p asp-action="login" asp-controller="account" class="btn btn-sm btn-outline-secondary">Login</p>
+                     <a asp-action="login" asp-controller="account" class="btn btn-sm btn-outline-secondary">Login</a>
                 </div> 
                         
                     }
@@ -65,7 +65,7 @@
             <a class="p-2 text-muted" href="/Category/List/Keyboards">Keyboards</a>
         </nav>
     </div>
-    <div class="row mt-5 mb-2">
+    <div class="row mt-5 mb-2" href="">
         @{
             foreach (Item item in ViewBag.Items)
             {
