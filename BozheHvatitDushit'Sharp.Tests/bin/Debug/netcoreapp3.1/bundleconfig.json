@@ -1,0 +1,14 @@
+[
+  {
+    "inputFiles": [ "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" ],
+    "outputFileName": "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  },
+  {
+    "inputFiles": [ "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" ],
+    "outputFileName": "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js",
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  }
+]

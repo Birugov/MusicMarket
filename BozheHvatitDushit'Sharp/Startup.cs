@@ -13,6 +13,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
+using Google;
+
 
 namespace BozheHvatitDushit_Sharp
 {
@@ -37,6 +39,13 @@ namespace BozheHvatitDushit_Sharp
             services.AddMvc(options=> {
                 options.CacheProfiles.Add("Monthly", new CacheProfile { Duration = 60 * 60 * 24 * 7 * 4 });
             });
+            services.AddAuthentication().AddGoogle(options => {
+                options.ClientId = "195184219128-sfkja76sq0tijbmk7bivuvp4bcb0snbo.apps.googleusercontent.com";
+                options.ClientSecret = "B_-eaatDx1XowA-OaVEmrOw_";
+
+
+                }
+            );
             services.AddControllersWithViews();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sp => Cart.GetCart(sp));

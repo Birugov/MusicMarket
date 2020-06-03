@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BozheHvatitDushit'Sharp", "BozheHvatitDushit'Sharp\BozheHvatitDushit'Sharp.csproj", "{7C0CD802-B3F8-4DE7-BC7A-5E7904082983}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTest", "XUnitTest\XUnitTest.csproj", "{EA4883B4-ED3E-4CB9-B2CB-1B008C139939}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BozheHvatitDushit'Sharp.Tests", "BozheHvatitDushit'Sharp.Tests\BozheHvatitDushit'Sharp.Tests.csproj", "{81EFAD3F-C9DE-4D29-98F0-186407B0D226}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{7C0CD802-B3F8-4DE7-BC7A-5E7904082983}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C0CD802-B3F8-4DE7-BC7A-5E7904082983}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C0CD802-B3F8-4DE7-BC7A-5E7904082983}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EA4883B4-ED3E-4CB9-B2CB-1B008C139939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EA4883B4-ED3E-4CB9-B2CB-1B008C139939}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EA4883B4-ED3E-4CB9-B2CB-1B008C139939}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EA4883B4-ED3E-4CB9-B2CB-1B008C139939}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81EFAD3F-C9DE-4D29-98F0-186407B0D226}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81EFAD3F-C9DE-4D29-98F0-186407B0D226}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81EFAD3F-C9DE-4D29-98F0-186407B0D226}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81EFAD3F-C9DE-4D29-98F0-186407B0D226}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

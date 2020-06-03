@@ -36,7 +36,7 @@ namespace BozheHvatitDushitSharp.Models
                 CartId = CartId,
                 item = item,
                 price = item.price
-            });
+            }); 
             itemContext.SaveChanges();
         }
         public List<CartItem> GetItems()

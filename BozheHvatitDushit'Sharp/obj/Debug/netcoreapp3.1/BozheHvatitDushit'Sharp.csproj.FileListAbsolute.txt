@@ -194,5 +194,10 @@ C:\Users\asema\source\repos\MusicMarket\BozheHvatitDushit'Sharp\bin\Debug\netcor
 C:\Users\asema\source\repos\MusicMarket\BozheHvatitDushit'Sharp\bin\Debug\netcoreapp3.1\MongoDB.Libmongocrypt.dll
 C:\Users\asema\source\repos\MusicMarket\BozheHvatitDushit'Sharp\bin\Debug\netcoreapp3.1\SharpCompress.dll
 C:\Users\asema\source\repos\MusicMarket\BozheHvatitDushit'Sharp\bin\Debug\netcoreapp3.1\MongoDB.Driver.dll
+C:\Users\asema\source\repos\MusicMarket\BozheHvatitDushit'Sharp\bin\Debug\netcoreapp3.1\Google.Apis.dll
+C:\Users\asema\source\repos\MusicMarket\BozheHvatitDushit'Sharp\bin\Debug\netcoreapp3.1\Google.Apis.Auth.PlatformServices.dll
+C:\Users\asema\source\repos\MusicMarket\BozheHvatitDushit'Sharp\bin\Debug\netcoreapp3.1\Google.Apis.Auth.dll
+C:\Users\asema\source\repos\MusicMarket\BozheHvatitDushit'Sharp\bin\Debug\netcoreapp3.1\Google.Apis.Core.dll
 C:\Users\asema\source\repos\MusicMarket\BozheHvatitDushit'Sharp\obj\Debug\netcoreapp3.1\BozheHvatitDushit'Sharp.csproj.CoreCompileInputs.cache
 C:\Users\asema\source\repos\MusicMarket\BozheHvatitDushit'Sharp\obj\Debug\netcoreapp3.1\BozheHvatitDushitSharp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\asema\source\repos\MusicMarket\BozheHvatitDushit'Sharp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Google.dll

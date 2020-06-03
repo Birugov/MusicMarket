@@ -257,3 +257,8 @@ C:\Users\asema\source\repos\MusicMarket\XUnitTest\bin\Debug\netcoreapp3.1\Moq.dl
 C:\Users\asema\source\repos\MusicMarket\XUnitTest\obj\Debug\netcoreapp3.1\XUnitTest.csproj.CoreCompileInputs.cache
 C:\Users\asema\source\repos\MusicMarket\XUnitTest\obj\Debug\netcoreapp3.1\XUnitTest.dll
 C:\Users\asema\source\repos\MusicMarket\XUnitTest\obj\Debug\netcoreapp3.1\XUnitTest.pdb
+C:\Users\asema\source\repos\MusicMarket\XUnitTest\bin\Debug\netcoreapp3.1\Google.Apis.dll
+C:\Users\asema\source\repos\MusicMarket\XUnitTest\bin\Debug\netcoreapp3.1\Google.Apis.Auth.PlatformServices.dll
+C:\Users\asema\source\repos\MusicMarket\XUnitTest\bin\Debug\netcoreapp3.1\Google.Apis.Auth.dll
+C:\Users\asema\source\repos\MusicMarket\XUnitTest\bin\Debug\netcoreapp3.1\Google.Apis.Core.dll
+C:\Users\asema\source\repos\MusicMarket\XUnitTest\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Google.dll

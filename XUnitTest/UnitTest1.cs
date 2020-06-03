@@ -7,10 +7,8 @@ using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
 using System.Threading.Tasks;
-using Xunit;
-using Assert = NUnit.Framework.Assert;
 
-namespace XUnitTest
+namespace BozheHvatitDushitSharp.Tests
 {
     public class UnitTest1
     {
